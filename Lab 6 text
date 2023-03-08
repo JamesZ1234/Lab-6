@@ -1,0 +1,72 @@
+#include "vex.h"
+
+
+
+
+float topLine = 5;//x value
+float botLine = 9;//xvalue
+float zheight = 1.5;
+
+
+
+
+using namespace vex;
+
+
+void letterV(){
+ RoboticArm1.moveToPositionLinear(topLine,-4.18,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,-3,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,-2,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,-2,zheight+2);
+}
+void letterE(){
+ RoboticArm1.moveToPositionLinear(topLine,-1,zheight+2);
+ RoboticArm1.moveToPositionLinear(topLine,-1,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,-1,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,-1,zheight+2);
+
+
+ RoboticArm1.moveToPositionLinear(topLine,-1.5,zheight+2);
+ RoboticArm1.moveToPositionLinear(topLine,-1.5,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,1,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,1,zheight+2);
+
+
+ RoboticArm1.moveToPositionLinear(7.3,-1,zheight+1);
+ RoboticArm1.moveToPositionLinear(7.3,-1.5,zheight);
+ RoboticArm1.moveToPositionLinear(7.3,1,zheight);
+ RoboticArm1.moveToPositionLinear(7.3,1,zheight+1);
+
+
+ RoboticArm1.moveToPositionLinear(botLine,-1,zheight+1);
+ RoboticArm1.moveToPositionLinear(botLine,-1,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,1,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,1,zheight+2);
+
+
+
+
+}
+void letterX(){
+ RoboticArm1.moveToPositionLinear(topLine,2,zheight+2);
+ RoboticArm1.moveToPositionLinear(topLine,2,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,4,zheight);
+ RoboticArm1.moveToPositionLinear(botLine,4,zheight+2);
+ RoboticArm1.moveToPositionLinear(botLine,2,zheight+2);
+ RoboticArm1.moveToPositionLinear(botLine,2,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,4,zheight);
+ RoboticArm1.moveToPositionLinear(topLine,4,zheight+2);
+ }
+
+
+int main() {
+ // Initializing Robot Configuration. DO NOT REMOVE!
+ vexcodeInit();
+ RoboticArm1.setMasteringValues(1848.0,2141.0,1883.0,629.0);
+ //RoboticArm1.setToolTipOffset(1.05, 0.0, -1.0);
+ RoboticArm1.setToolTipOffset(0,0,0);
+  letterV();
+ letterE();
+ letterX();
+ return 0;
+}
